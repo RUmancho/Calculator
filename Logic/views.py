@@ -17,14 +17,14 @@ def viewInput(request):
         num1 = float(request.GET.get("num1", 0))
         num2 = float(request.GET.get("num2", 0))
     except:
-        return HttpResponse("<h1>Ошибка: Вы некорректно ввели не число</h1>")
+        return HttpResponse("<h1>Ошибка: Вы некорректно ввели не число</")
 
     calc = mathOperations.get(selectMathOperation, "")
     print(calc)
     
     if calc != "":
         if operation == "/" and num2 == 0:
-            return HttpResponse("<h1>Ошибка деления на ноль</h1>")
+            return HttpResponse("<h1>Ошибка деления на ноль</")
         fullResult = f"{num1} {selectMathOperation} {num2} = {calc(num1, num2)}"
 
     context = {
